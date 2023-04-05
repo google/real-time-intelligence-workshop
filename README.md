@@ -21,8 +21,8 @@ This repository features self-contained, hands-on-labs with detailed step-by-ste
 
 | # | Use Case | Lab summary | Contributed by |
 | -- | :--- | :--- |:--- |
-| 1. |[Anomaly Detection Interactive Notebook](AnomalyDetection/README.md)|A real-time, streaming, machine learning (ML) prediction pipeline that uses Dataflow, Pub/Sub, Vertex AI, BigQuery and Cloud Storage | Sam Iyer
-| 2. |[Real Time Prediction](RealTimePrediction/README.md)|Running an Apache Beam pipeline using Dataflow notebooks| Smitha Venkat, Purnima Maganti and Mohamed Barry
+| 1. |[Real Time Prediction](RealTimePrediction/realtime-intelligence-main/README.md)|A real-time, streaming, machine learning (ML) prediction pipeline that uses Dataflow, Pub/Sub, Vertex AI, BigQuery and Cloud Storage | Sam Iyer
+| 2. |[Anomaly Detection Interactive Notebook](AnomalyDetection/anomalydetection-interactivenotebook-main/README.md)|Running an Apache Beam pipeline using Dataflow notebooks| Smitha Venkat, Purnima Maganti and Mohamed Barry
 
 ## Contributing
 See the contributing [instructions](CONTRIBUTING.md) to get started contributing.
