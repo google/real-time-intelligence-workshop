@@ -2,15 +2,16 @@
 
 This module includes all prerequisites for this Lab<br>
 
-[0. Prerequisites](01-prerequisites.md#1-prerequisites)<br>
-[1. Variables](01-prerequisites.md#1-varibles)<br>
-[2. Enable APIs](01-prerequisites.md#2-enable-google-apis)<br>
-[3. Create a VPC & a subnet](01-prerequisites.md#3-create-a-vpc--a-subnet)<br>
+[0. Prerequisites](01-prerequisites.md#0-prerequisites)<br>
+[1. Variables](01-prerequisites.md#1-variables)<br>
+[2. Enable APIs](01-prerequisites.md#2-enable-api-services)<br>
+[3. Create a VPC & a subnet](01-prerequisites.md#3-create-vpc-&-subnet)<br>
 [4. Create firewall rules](01-prerequisites.md#4-create-firewall-rules)<br>
-[5. Update organizational policies](01-prerequisites.md#5-implement-organizational-policies)<br>
-[6. Service Account](01-prerequisites.md#6-create-a-user-managed-service-account)<br>
-[7. Grant general IAM permissions](01-prerequisites.md#7-grant-general-iam-permissions)<br>
-[8. Launch Apache Beam Notebook Instance](01-prerequisites.md#8-launch-notebook)<br>
+[5. Update organizational policies](01-prerequisites.md#5-update-organizational-policies)<br>
+[6. Service Account](01-prerequisites.md#6-service-account)<br>
+[7. Grant general IAM permissions](01-prerequisites.md#7-grant-permissions-for-service-account-that-you-just-created)<br>
+[8. Launch Apache Beam Notebook Instance](01-prerequisites.md#8-launch-an-apache-beam-notebook-instance)<br>
+[9. Next Step](01-prerequisites.md#9-next-step)<br>
 
 ## 0. Prerequisites
 
