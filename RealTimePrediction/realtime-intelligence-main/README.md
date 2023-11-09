@@ -67,9 +67,9 @@ Step 01. Create a GCP project and open Cloud Shell
 
 Step 02. Clone this github repository: 
 
-           https://github.com/seidou-1/GoogleCloud.git
+        git clone https://github.com/google/real-time-intelligence-workshop.git
 
-Step 03. Change Directory to realtime-intelligence
+Step 03. Change Directory to **RealTimePrediction/realtime-intelligence-main**
 
 Step 04. Execute script setup_env.sh
 
