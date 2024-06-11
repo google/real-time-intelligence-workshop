@@ -21,7 +21,8 @@ import tensorflow as tf
 from google.cloud import aiplatform
 from google.cloud.aiplatform import gapic as aip
 from google.cloud.aiplatform import hyperparameter_tuning as hpt
-from kfp.v2 import compiler, dsl
+#Remove References to kfp
+#from kfp.v2 import compiler, dsl
 ENDPOINT_NAME = 'flights'
 
 
@@ -183,9 +184,11 @@ def do_hyperparameter_tuning(data_set, timestamp, develop_mode, cpu_only_mode, t
     logging.info('Launching full training job with {}'.format(best_params))
     return train_custom_model(data_set, timestamp, develop_mode, cpu_only_mode, tf_version, extra_args=best_params)
 
-@dsl.pipeline(name="flights-pipeline",
-              description="ds-on-gcp flights pipeline"
-)
+#Remove references to kfp
+#@dsl.pipeline(name="flights-pipeline",
+#              description="ds-on-gcp flights pipeline"
+#)
+
 def main():
     aiplatform.init(project=PROJECT, location=REGION, staging_bucket='gs://{}'.format(BUCKET))
 
@@ -236,18 +239,18 @@ def main():
     if DEVELOP_MODE:
         model.wait()
 
+#Remove run_pipeline function
+#def run_pipeline():
+#    compiler.Compiler().compile(pipeline_func=main, package_path='flights_pipeline.json')
 
-def run_pipeline():
-    compiler.Compiler().compile(pipeline_func=main, package_path='flights_pipeline.json')
+#    job = aip.PipelineJob(
+#        display_name="{}-pipeline".format(ENDPOINT_NAME),
+#        template_path="{}_pipeline.json".format(ENDPOINT_NAME),
+#        pipeline_root="{}/pipeline_root/intro".format(BUCKET),
+#        enable_caching=False
+#    )
 
-    job = aip.PipelineJob(
-        display_name="{}-pipeline".format(ENDPOINT_NAME),
-        template_path="{}_pipeline.json".format(ENDPOINT_NAME),
-        pipeline_root="{}/pipeline_root/intro".format(BUCKET),
-        enable_caching=False
-    )
-
-    job.run()
+#    job.run()
 
 
 if __name__ == '__main__':
@@ -314,7 +317,7 @@ if __name__ == '__main__':
     NUM_HPARAM_TRIALS = args['num_hparam_trials']
     TIMESTAMP = datetime.now().strftime("%Y%m%d%H%M%S")
 
-    if args['pipeline']:
-        run_pipeline()
-    else:
-        main()
+    #if args['pipeline']:
+        #run_pipeline()
+    #else:
+    main()
