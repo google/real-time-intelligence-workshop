@@ -73,33 +73,37 @@ Step 03. Change Directory to **RealTimePrediction/realtime-intelligence-main**
 
         cd real-time-intelligence-workshop/RealTimePrediction/realtime-intelligence-main/
 
-Step 04. Execute script setup_env.sh
+Step 04. Execute script 
+        
+        ./setup_env.sh
 
-         This script sets up your project:
+    This script sets up your project:
 
-            a. Create Project Variables
+    a. Create Project Variables
 
-            b. Enable necessary APIs
+    b. Enable necessary APIs
 
-            c. Add the necessary roles for the default compute service account
+    c. Add the necessary roles for the default compute service account
 
-            d. Create Network, Sub-network & Firewall rules
+    d. Create Network, Sub-network & Firewall rules
 
-Step 05. Execute script stage_data.sh
+Step 05. Execute script 
 
-         This script will stage data for the lab
+        ./stage_data.sh
 
-            a. Create a storage bucket to stage the following datasets
+    This script will stage data for the lab
 
-               i.   Download flight ontime performance data
+    a. Create a storage bucket to stage the following datasets
 
-               ii.  Download flight timezone corrected data
+        i.   Download flight ontime performance data
 
-               iii. Download Airport information
+        ii.  Download flight timezone corrected data
 
-               iv.  Download Flight Simulated Events
+        iii. Download Airport information
 
-            f. Upload the downloaded files to BigQuery 
+        iv.  Download Flight Simulated Events
+
+        v. Upload the downloaded files to BigQuery 
 
 Step 06. Validate if data has been copied to Cloud Storage and BigQuery
         
@@ -107,39 +111,39 @@ Sample image of the GCS Bucket
 
 ![GCS](images/ingestion_gcs.png)
 
-         a. Cloud Storage
+     a. Cloud Storage
 
-            i. <PROJECT_ID>-ml bucket is created
+    i. <PROJECT_ID>-ml bucket is created
 
-            ii. Open the bucket and validate if the following files exists
+    ii. Open the bucket and validate if the following files exists
 
-                 - flight_simevents_dump*.gz(5 files)
+         - flight_simevents_dump*.gz(5 files)
 
-                 - flight folder has 3 sub-folders    - airports, raw & tzcorr
+         - flight folder has 3 sub-folders    - airports, raw & tzcorr
 
-                 - airports folder has 1 file         - airports.csv
+         - airports folder has 1 file         - airports.csv
 
-                 - raw folder has 2 files             - 201501.csv & 201502.csv
+         - raw folder has 2 files             - 201501.csv & 201502.csv
 
-                 - tzcorr folder has 1 file           - all_flights*
+         - tzcorr folder has 1 file           - all_flights*
 
 Sample Image of Bigquery Dataset        
 
 ![BigQuery](images/ingestion_bq.png)     
 
-        b. BigQuery
+    b. BigQuery
 
-            i. flights dataset is created
+        i. flights dataset is created
 
-            ii. Open the dataset and validate if the following tables exists
+        ii. Open the dataset and validate if the following tables exists
 
-                - airports          - 13,386 rows
+            - airports          - 13,386 rows
 
-                - flights_raw       - 899,159 rows
+            - flights_raw       - 899,159 rows
 
-                - flights_simevents - 2,600,380 rows
+            - flights_simevents - 2,600,380 rows
 
-                - flights_tzcorr    - 65,099 rows
+            - flights_tzcorr    - 65,099 rows
 
 Step 07. Check Organization Policies to review the following constraints 
 
