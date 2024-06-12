@@ -93,17 +93,17 @@ Step 05. Execute script
 
 This script will stage data for the lab
 
-  a. Create a storage bucket to stage the following datasets
+a. Create a storage bucket to stage the following datasets
 
-    i.   Download flight ontime performance data
+  i.   Download flight ontime performance data
 
-    ii.  Download flight timezone corrected data
+  ii.  Download flight timezone corrected data
 
-    iii. Download Airport information
+  iii. Download Airport information
 
-    iv.  Download Flight Simulated Events
+  iv.  Download Flight Simulated Events
 
-    v. Upload the downloaded files to BigQuery 
+  v. Upload the downloaded files to BigQuery 
 
 Step 06. Validate if data has been copied to Cloud Storage and BigQuery
         
