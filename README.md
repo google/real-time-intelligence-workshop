@@ -1,4 +1,4 @@
-Copyright 2023 Google LLC
+Copyright 2024 Google LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -41,5 +41,5 @@ Share you feedback, ideas, by logging [issues](../../issues).
 | # | Release Summary | Date |  Contributor |
 | -- | :--- | :--- |:--- |
 | 1. |Initial release| 4/4/2023| Various|
-| 2. ||||
+| 2. |Code Fix|6/10/2024|realtime/train_on_vertexai.py|
 | 3. ||||
