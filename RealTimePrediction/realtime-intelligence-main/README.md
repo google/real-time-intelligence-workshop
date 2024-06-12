@@ -109,7 +109,7 @@ Sample image of the GCS Bucket
 
 ![GCS](images/ingestion_gcs.png)
 
-a. In Google Cloud Console menu, Navigate to Cloud Storage and validate if <PROJECT_ID>-ml bucket is created
+- In Google Cloud Console menu, Navigate to Cloud Storage and validate if <PROJECT_ID>-ml bucket is created
 
 Open the bucket and validate if the following files exists
 
@@ -127,7 +127,7 @@ Sample Image of Bigquery Dataset
 
 ![BigQuery](images/ingestion_bq.png)     
 
-b. In Google Cloud Console menu, Navigate to BigQuery and validate if flights dataset is created
+- In Google Cloud Console menu, Navigate to BigQuery and validate if flights dataset is created
 
 Open the dataset and validate if the following tables exists
 
@@ -189,7 +189,7 @@ Sample Image of TrainData Job Graph
 
 ![Batch](images/batch.png) 
 
-d. Open <PROJECT_ID>-ml bucket to validate the following files and folders are present
+Open <PROJECT_ID>-ml bucket to validate the following files and folders are present
 
  - train folder with 1 sub-folder  - data with 4 files - all*.csv, test*.csv, train*.csv, validate*.csv
 
