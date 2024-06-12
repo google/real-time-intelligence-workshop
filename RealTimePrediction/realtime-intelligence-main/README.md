@@ -65,15 +65,15 @@ This website provides historical on-time performance information of domestic fli
 
 ### Step 01. Create a GCP project and open Cloud Shell 
 
-Step 02. Clone this github repository: 
+### Step 02. Clone this github repository: 
 
         git clone https://github.com/google/real-time-intelligence-workshop.git
 
-Step 03. Change Directory to **RealTimePrediction/realtime-intelligence-main**
+### Step 03. Change Directory to **RealTimePrediction/realtime-intelligence-main**
 
         cd real-time-intelligence-workshop/RealTimePrediction/realtime-intelligence-main/
 
-Step 04. Execute script 
+### Step 04. Execute script 
         
         ./setup_env.sh
 
@@ -87,7 +87,7 @@ This script sets up your project:
 
   - Create Network, Sub-network & Firewall rules
 
-Step 05. Execute script 
+### Step 05. Execute script 
 
         ./stage_data.sh
 
@@ -103,7 +103,7 @@ This script will stage the following data for the lab
 
  - Upload the downloaded files to BigQuery 
 
-Step 06. Validate if data has been copied to Cloud Storage and BigQuery
+### Step 06. Validate if data has been copied to Cloud Storage and BigQuery
         
 Sample image of the GCS Bucket
 
@@ -139,7 +139,7 @@ Open the dataset and validate if the following tables exists
 
  - flights_tzcorr    - 65,099 rows
 
-Step 07. Check Organization Policies to review the following constraints 
+### Step 07. Check Organization Policies to review the following constraints 
 
  - In Google Cloud Console menu, navigate to IAM->Organization Policies
 
@@ -164,13 +164,13 @@ Sample Image of External IP Access - Organization Policy
 
 ![ExternalIP](images/op_externalip.png) 
 
-Step 08. Execute script  to install the necessary packages.
+### Step 08. Execute script  to install the necessary packages.
 
         ./install_packages.sh
 
  - These packages are necessary to run tensorflow and apache beam processes
 
-Step 09. Execute script create_train_data.sh to create data for model training.
+### Step 09. Execute script create_train_data.sh to create data for model training.
 
  This script creates data for testing, training and validation of the model.
 
@@ -204,7 +204,7 @@ Sample Image of the bucket
 ![Flightsfolder](images/flights_folder.png) 
 
 
-Step 10. Execute script to train and deploy the model 
+### Step 10. Execute script to train and deploy the model 
 
         ./train_model.sh
 
@@ -232,7 +232,7 @@ Sample Image of Vertex AI Endpoint
 ![AIEndpoint](images/vertex_ai_endpoint.png) 
 
 
-Step 11. Open another tab in cloud shell and execute script to stream simulated flight data
+### Step 11. Open another tab in cloud shell and execute script to stream simulated flight data
 
         ./simulate_flight.sh
 
@@ -249,7 +249,7 @@ Sample Image of Pub/Sub Topics
 ![PubSub](images/pubsub.png) 
 
 
-Step 12. In the previous tab execute script to predict the probaility of flights being on time 
+### Step 12. In the previous tab execute script to predict the probaility of flights being on time 
 
         ./predict_flights.sh
 
