@@ -91,19 +91,17 @@ Step 05. Execute script
 
         ./stage_data.sh
 
-This script will stage data for the lab
+This script will stage the following data for the lab
 
-a. Create a storage bucket to stage the following datasets
+ - Download flight ontime performance data
 
-i.   Download flight ontime performance data
+ - Download flight timezone corrected data
 
-ii.  Download flight timezone corrected data
+ - Download Airport information
 
-iii. Download Airport information
+ - Download Flight Simulated Events
 
-iv.  Download Flight Simulated Events
-
-v.   Upload the downloaded files to BigQuery 
+ - Upload the downloaded files to BigQuery 
 
 Step 06. Validate if data has been copied to Cloud Storage and BigQuery
         
@@ -111,11 +109,9 @@ Sample image of the GCS Bucket
 
 ![GCS](images/ingestion_gcs.png)
 
-a. Cloud Storage
+a. In Google Cloud Console menu, Navigate to Cloud Storage and validate if <PROJECT_ID>-ml bucket is created
 
-i. <PROJECT_ID>-ml bucket is created
-
-ii. Open the bucket and validate if the following files exists
+Open the bucket and validate if the following files exists
 
  - flight_simevents_dump*.gz(5 files)
 
@@ -131,11 +127,9 @@ Sample Image of Bigquery Dataset
 
 ![BigQuery](images/ingestion_bq.png)     
 
-b. BigQuery
+b. In Google Cloud Console menu, Navigate to BigQuery and validate if flights dataset is created
 
-i. flights dataset is created
-
-ii. Open the dataset and validate if the following tables exists
+Open the dataset and validate if the following tables exists
 
  - airports          - 13,386 rows
 
@@ -153,18 +147,18 @@ Step 07. Check Organization Policies to review the following constraints
 
   Filter the following constraint to validate current settings
 
-  constraints/compute.requireShieldedVm
+        constraints/compute.requireShieldedVm
 
 Sample Image of Shielded VM - Organization Policy
 
 ![ShieldedVM](images/op_shieldedvm.png) 
 
 
-c. Allow VM external IP Access 
+ c. Allow VM external IP Access 
 
  Filter the following constraint to validate current settings
 
- constraints/compute.vmExternalIpAccess 
+        constraints/compute.vmExternalIpAccess 
 
 Sample Image of External IP Access - Organization Policy
 
@@ -178,11 +172,11 @@ Step 09. Execute script create_train_data.sh to create data for model training.
 
  This script creates data for testing, training and validation of the model.
 
-  a. In the Google Cloud Console menu, navigate to Dataflow > Jobs
+  - In the Google Cloud Console menu, navigate to Dataflow > Jobs
 
-  b. Click on traindata job to review the job graph
+  - Click on traindata job to review the job graph
 
-  c. Wait for the job to run and succeed - will take about 20 minutes
+  - Wait for the job to run and succeed - will take about 20 minutes
 
 Sample Image of Dataflow Jobs - Note: traindata is a batch job
 
@@ -212,24 +206,24 @@ Step 10. Execute script to train and deploy the model
 
         ./train_model.sh
 
- a. In Google Cloud Console menu, navigate to Vertex AI -> Training to monitor the training pipeline.
+ - In Google Cloud Console menu, navigate to Vertex AI -> Training to monitor the training pipeline.
 
 Sample Image of Vertex AI Training Pipeline
 
 ![AITraining](images/vertex_ai_training.png) 
 
- b. When the status is Finished, click on the training pipeline name and select Deploy & Test tab 
+ - When the status is Finished, click on the training pipeline name and select Deploy & Test tab 
 
 Sample Image of Vertex AI Deployment 
 
 ![AIDeployment](images/vertex_ai_deployment.png) 
 
 
- c. Monitor the deployment status of the model
+ - Monitor the deployment status of the model
  
- d. Note: It will take around 20 minutes to complete the model training and deployment.
+ - Note: It will take around 20 minutes to complete the model training and deployment.
 
- e. Once the model is deployed the flights endpoint will be used to call the model for prediction.
+ - Once the model is deployed the flights endpoint will be used to call the model for prediction.
 
 Sample Image of Vertex AI Endpoint 
 
@@ -240,15 +234,13 @@ Step 11. Open another tab in cloud shell and execute script to stream simulated 
 
         ./simulate_flight.sh
 
-    a. In Google Cloud Console menu, navigate to Pub/Sub -> Topics 
+ - In Google Cloud Console menu, navigate to Pub/Sub -> Topics 
 
-    b. Review 3 topics that were created to stream simulated flights events 
+ -  Review 3 topics that were created to stream simulated flights events 
 
-     arrived     - simulates flight arrivals
-
-     departed    - simulates flight departures
-
-     wheels-off  - simulates flight take-offs
+   - arrived     - simulates flight arrivals
+   - departed    - simulates flight departures
+   - wheels-off  - simulates flight take-offs
 
 Sample Image of Pub/Sub Topics 
 
@@ -259,7 +251,7 @@ Step 12. In the previous tab execute script to predict the probaility of flights
 
         ./predict_flights.sh
 
-a. This scripts will create a streaming data flow job that calls the AI model trained in Step 10
+This scripts will create a streaming data flow job that calls the AI model trained in Step 10
 
 Sample Image of Dataflow Jobs - Note: predictions is a streaming job
 
@@ -269,13 +261,13 @@ Sample Image of predictions Job Graph
 
 ![Streaming](images/streaming.png) 
 
- b. Wait for 15 minutes. 
+ - Wait for 15 minutes. 
 
- c. In Google Cloud Consule menu,  navigate to BigQuery -> Sql Workspace
+ - In Google Cloud Consule menu,  navigate to BigQuery -> Sql Workspace
 
- d. Open the dataset flights and review streaming_preds table 
+ - Open the dataset flights and review streaming_preds table 
 
- e. Streaming predictions on probalblity of flight ontime arrival is captured in this table  
+ - Streaming predictions on probalblity of flight ontime arrival is captured in this table  
 
 Sample Image of Streaming Predictions Table
 
