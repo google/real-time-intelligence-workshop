@@ -42,7 +42,7 @@ This website provides historical on-time performance information of domestic fli
 
     b. Prediction - Streaming Dataflow job to read from Pub/Sub and call Vertex AI Model to predict on-time arrival of flights.
     
-    c. Stpre - Capture the predictions in a BigQuery Dataset for Analysis and Dashboarding needs.
+    c. Store - Capture the predictions in a BigQuery Dataset for Analysis and Dashboarding needs.
 
 ## Datasets
 
