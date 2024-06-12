@@ -79,13 +79,13 @@ Step 04. Execute script
 
 This script sets up your project:
 
-a. Create Project Variables
+    a. Create Project Variables
 
-b. Enable necessary APIs
+    b. Enable necessary APIs
 
-c. Add the necessary roles for the default compute service account
+    c. Add the necessary roles for the default compute service account
 
-d. Create Network, Sub-network & Firewall rules
+    d. Create Network, Sub-network & Firewall rules
 
 Step 05. Execute script 
 
