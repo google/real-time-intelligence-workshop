@@ -24,41 +24,41 @@ This website provides historical on-time performance information of domestic fli
 ![Architecture](images/architecture.png)
 1. Data Ingestion 
 
-    a. Ingest - Extract Flight On-Time Perfomance Data (Date, Flight Number, Origin, Destination, Departure Time, Taxi Time, Arrival Time, etc  ) -> Stored in Cloud Storage Bucket
+    - Ingest - Extract Flight On-Time Perfomance Data (Date, Flight Number, Origin, Destination, Departure Time, Taxi Time, Arrival Time, etc  ) -> Stored in Cloud Storage Bucket
     
-    b. Ingest - Extract Airport Information (Airport code, City, Latitude, Longitiude, etc.,) -> Stored in Cloud Storage Bucket
+    - Ingest - Extract Airport Information (Airport code, City, Latitude, Longitiude, etc.,) -> Stored in Cloud Storage Bucket
     
-    c. Store  - Store standardized and transformed datasets in BigQuery
+    - Store  - Store standardized and transformed datasets in BigQuery
 
 2. Model Training 
 
-    a. Batch Dataflow Process to create Training Dataset using simulated events. 
+    - Batch Dataflow Process to create Training Dataset using simulated events. 
 
-    b. Use the Training Dataset for Vertex AI Model Training.
+    - Use the Training Dataset for Vertex AI Model Training.
 
 3. Prediction
 
-    a. Simulate - Simulate Realtime Fight Takeoffs & Landings and capture this data in Pub/Sub Topics.
+    - Simulate - Simulate Realtime Fight Takeoffs & Landings and capture this data in Pub/Sub Topics.
 
-    b. Prediction - Streaming Dataflow job to read from Pub/Sub and call Vertex AI Model to predict on-time arrival of flights.
+    - Prediction - Streaming Dataflow job to read from Pub/Sub and call Vertex AI Model to predict on-time arrival of flights.
     
-    c. Store - Capture the predictions in a BigQuery Dataset for Analysis and Dashboarding needs.
+    - Store - Capture the predictions in a BigQuery Dataset for Analysis and Dashboarding needs.
 
 ## Datasets
 
 1. Inputs
 
-    a. Airports Information        - airports 
+    - Airports Information        - airports 
 
-    b. Ontime Flight Data          - flights_raw
+    - Ontime Flight Data          - flights_raw
 
-    c. Time Zone Corrected Data    - flights_tzcorr     
+    - Time Zone Corrected Data    - flights_tzcorr     
 
-    d. Simulated Flight Event      - flights_simevents
+    - Simulated Flight Event      - flights_simevents
 
 2. Outputs
 
-    a. Streaming Prediction        - streaming_preds   
+    - Streaming Prediction        - streaming_preds   
 
 
 ## Getting started
@@ -141,11 +141,11 @@ Open the dataset and validate if the following tables exists
 
 Step 07. Check Organization Policies to review the following constraints 
 
- a. In Google Cloud Console menu, navigate to IAM->Organization Policies
+ - In Google Cloud Console menu, navigate to IAM->Organization Policies
 
- b. Turn off Shielded VM Policy 
+ - Turn off Shielded VM Policy 
 
-  Filter the following constraint to validate current settings
+ - Filter the following constraint to validate current settings
 
         constraints/compute.requireShieldedVm
 
@@ -154,9 +154,9 @@ Sample Image of Shielded VM - Organization Policy
 ![ShieldedVM](images/op_shieldedvm.png) 
 
 
- c. Allow VM external IP Access 
+ - Allow VM external IP Access 
 
- Filter the following constraint to validate current settings
+ - Filter the following constraint to validate current settings
 
         constraints/compute.vmExternalIpAccess 
 
@@ -164,9 +164,11 @@ Sample Image of External IP Access - Organization Policy
 
 ![ExternalIP](images/op_externalip.png) 
 
-Step 08. Execute script install_packages.sh to install the necessary packages.
+Step 08. Execute script  to install the necessary packages.
 
- These packages are necessary to run tensorflow and apache beam processes
+        ./install_packages.sh
+
+ - These packages are necessary to run tensorflow and apache beam processes
 
 Step 09. Execute script create_train_data.sh to create data for model training.
 
