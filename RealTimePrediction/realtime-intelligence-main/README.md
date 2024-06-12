@@ -71,6 +71,8 @@ Step 02. Clone this github repository:
 
 Step 03. Change Directory to **RealTimePrediction/realtime-intelligence-main**
 
+        cd real-time-intelligence-workshop/RealTimePrediction/realtime-intelligence-main/
+
 Step 04. Execute script setup_env.sh
 
          This script sets up your project:
