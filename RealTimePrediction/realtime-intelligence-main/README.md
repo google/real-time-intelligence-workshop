@@ -63,7 +63,7 @@ This website provides historical on-time performance information of domestic fli
 
 ## Getting started
 
-# Step 01. Create a GCP project and open Cloud Shell 
+### Step 01. Create a GCP project and open Cloud Shell 
 
 Step 02. Clone this github repository: 
 
