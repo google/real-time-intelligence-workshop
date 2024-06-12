@@ -265,7 +265,7 @@ Sample Image of predictions Job Graph
 
  - Wait for 15 minutes. 
 
- - In Google Cloud Consule menu,  navigate to BigQuery -> Sql Workspace
+ - In Google Cloud Consule menu,  navigate to BigQuery -> SQL Studio
 
  - Open the dataset flights and review streaming_preds table 
 
