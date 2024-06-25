@@ -170,7 +170,9 @@ Sample Image of External IP Access - Organization Policy
 
  - These packages are necessary to run tensorflow and apache beam processes
 
-### Step 09. Execute script create_train_data.sh to create data for model training.
+### Step 09. Execute script to create data for model training.
+
+        ./create_train_data.sh
 
  This script creates data for testing, training and validation of the model.
 
